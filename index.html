@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gexon Technology Limited · 極訊技術有限公司</title>
+<meta name="description" content="Gexon Technology Limited（極訊技術有限公司）— AI 應用定製、數字營銷素材、交互視覺與品牌設計、流量投放諮詢服務。">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F17;
+  --panel:#111726;
+  --panel-soft:#141B2C;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.16);
+  --text:#E8ECF4;
+  --muted:#8A93A6;
+  --accent:#35E0C8;
+  --accent-bright:#5CF0DC;
+  --accent-tint:rgba(53,224,200,.1);
+  --indigo:#7A8CFF;
+  --amber:#FFB454;
+  --radius:10px;
+  --font-display:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','Space Grotesk',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1100px 520px at 85% -5%, rgba(53,224,200,.05), transparent 62%),
+    radial-gradient(900px 560px at -10% 22%, rgba(122,140,255,.04), transparent 58%),
+    linear-gradient(180deg, #0D1322 0%, #0B0F17 34%, #0A0D14 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:var(--font-body);
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--accent);color:var(--ink,#0B0F17)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* ---------- light backdrop ---------- */
+.backdrop{position:fixed;inset:0;pointer-events:none;z-index:0}
+.backdrop::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(900px 480px at 80% -10%, rgba(53,224,200,.05), transparent 60%),
+    radial-gradient(700px 480px at 55% 115%, rgba(53,224,200,.03), transparent 60%);
+}
+.backdrop::after{
+  content:"";position:absolute;inset:0;opacity:.35;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(1200px 800px at 50% 0%, #000 30%, transparent 80%);
+}
+main{position:relative;z-index:1}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(11,15,23,.72);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{display:block}
+.brand-name{font-family:var(--font-display);font-weight:700;font-size:19px;letter-spacing:.06em;color:var(--text)}
+.brand-cn{font-size:12px;color:var(--muted);letter-spacing:.28em;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:34px;font-size:14.5px;color:var(--muted)}
+.nav-links a{transition:color .25s}
+.nav-links a:hover{color:var(--accent)}
+.lang-toggle{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;
+  border:1px solid var(--line-strong);border-radius:8px;
+  padding:7px 16px;color:var(--muted);background:transparent;cursor:pointer;
+  transition:all .25s;
+}
+.lang-toggle:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:820px){.nav-links a:not(.lang-toggle){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 76px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.05) brightness(1.08)}
+.hero-bg-veil{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(860px 560px at 15% 62%, color-mix(in srgb, var(--bg) 55%, transparent) 0%, color-mix(in srgb, var(--bg) 28%, transparent) 55%, transparent 78%),
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--bg) 56%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 24%, transparent) 30%,
+      color-mix(in srgb, var(--bg) 28%, transparent) 52%,
+      color-mix(in srgb, var(--bg) 48%, transparent) 74%,
+      color-mix(in srgb, var(--bg) 80%, transparent) 90%,
+      var(--bg) 100%),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--bg) 92%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 76%, transparent) 30%,
+      color-mix(in srgb, var(--bg) 44%, transparent) 60%,
+      color-mix(in srgb, var(--bg) 14%, transparent) 84%,
+      color-mix(in srgb, var(--bg) 4%, transparent) 100%);
+}
+.hero-copy{text-shadow:0 1px 2px rgba(11,15,23,.5),0 2px 22px rgba(11,15,23,.45)}
+.hero-copy .btn{text-shadow:none}
+@media(max-width:980px){
+  .hero-bg img{filter:saturate(.85) brightness(.62)}
+  .hero-bg-veil{
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--bg) 66%, transparent) 0%,
+        color-mix(in srgb, var(--bg) 30%, transparent) 26%,
+        color-mix(in srgb, var(--bg) 34%, transparent) 52%,
+        color-mix(in srgb, var(--bg) 56%, transparent) 76%,
+        color-mix(in srgb, var(--bg) 88%, transparent) 92%,
+        var(--bg) 100%);
+  }
+}
+.hero-grid{position:relative;z-index:1}
+.hero-tag{
+  font-family:var(--font-mono);font-size:12.5px;letter-spacing:.22em;
+  color:var(--accent);text-transform:uppercase;
+  display:flex;align-items:center;gap:14px;margin-bottom:34px;
+}
+.hero-tag::before{content:"";width:36px;height:1px;background:var(--accent)}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(38px,4.6vw,60px);
+  font-weight:700;line-height:1.14;letter-spacing:-.01em;
+  text-wrap:balance;
+}
+.hero h1 .accent{color:var(--accent)}
+.hero-sub{
+  max-width:620px;margin-top:34px;
+  font-size:clamp(16px,1.6vw,19px);color:#C3CCDB;text-wrap:pretty;
+  text-shadow:0 1px 2px rgba(11,15,23,.6),0 2px 18px rgba(11,15,23,.5);
+}
+.hero-sub strong{color:#EDF2F8;font-weight:600}
+.hero-ctas{display:flex;gap:16px;margin-top:46px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:15px;font-weight:500;padding:14px 30px;border-radius:8px;
+  transition:transform .25s,box-shadow .25s,background .25s,border-color .25s;
+  cursor:pointer;
+}
+.btn-primary{
+  background:var(--accent);
+  color:#0B0F17;font-weight:500;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(53,224,200,.22);background:var(--accent-bright)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--text);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-chips{display:flex;gap:10px;flex-wrap:nowrap;margin-top:56px}
+.chip{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;
+  color:var(--muted);border:1px solid var(--line);border-radius:8px;
+  padding:8px 10px;background:rgba(255,255,255,.02);
+  white-space:nowrap;flex:1;text-align:center;min-width:0;
+}
+@media(max-width:860px){.hero-chips{flex-wrap:wrap}.chip{flex:1 1 auto;padding:8px 14px}}
+
+/* ---------- section shell ---------- */
+section{padding:72px 0}
+.sec-head{margin-bottom:44px}
+.sec-label{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;
+  color:var(--accent);text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;gap:14px;
+}
+.sec-label::before{content:"";width:36px;height:1px;background:var(--accent)}
+.sec-title{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(30px,4vw,46px);line-height:1.15;letter-spacing:-.01em;
+  text-wrap:balance;
+}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.svc{
+  grid-column:span 2;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:34px 30px;position:relative;overflow:hidden;
+  transition:transform .35s,border-color .35s,box-shadow .35s;
+}
+.svc:nth-child(1){grid-column:span 3}
+.svc:nth-child(2){grid-column:span 3}
+.svc:hover{transform:translateY(-2px);border-color:rgba(53,224,200,.35);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.svc-num{
+  font-family:var(--font-mono);font-size:12px;color:var(--muted);
+  letter-spacing:.15em;margin-bottom:22px;display:block;
+}
+.svc-icon{margin-bottom:22px}
+.svc h3{font-family:var(--font-display);font-size:20px;font-weight:500;margin-bottom:12px;letter-spacing:.01em}
+.svc p{font-size:14.5px;color:var(--muted);text-wrap:pretty}
+.svc::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.svc:hover::after{opacity:1}
+@media(max-width:860px){.svc{grid-column:span 6 !important}}
+
+/* ---------- featured work ---------- */
+.work{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center;
+  background:var(--panel);
+  border:1px solid var(--line);border-radius:14px;
+  padding:64px;position:relative;overflow:hidden;
+}
+.work-badge{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.2em;
+  color:var(--amber);text-transform:uppercase;margin-bottom:22px;
+  display:flex;align-items:center;gap:12px;
+}
+.work-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.work h3{font-family:var(--font-display);font-size:clamp(28px,3.4vw,42px);font-weight:700;margin-bottom:8px}
+.work .work-cn{font-size:15px;color:var(--muted);letter-spacing:.14em;margin-bottom:26px}
+.work p{color:var(--muted);font-size:15.5px;text-wrap:pretty}
+.work-feats{margin-top:32px;display:grid;gap:12px}
+.work-feats li{
+  list-style:none;display:flex;gap:14px;align-items:baseline;
+  font-size:14.5px;color:var(--text);
+}
+.work-feats li::before{content:"—";color:var(--accent);flex-shrink:0}
+/* phone mockup - dark */
+.phone{
+  width:min(300px,80%);margin:0 auto;aspect-ratio:9/19;
+  border:1px solid var(--line-strong);border-radius:42px;
+  background:linear-gradient(160deg,#151d30,#0d1220);
+  position:relative;padding:14px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.phone::before{
+  content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  width:88px;height:24px;background:#0B0F17;border-radius:14px;z-index:2;
+}
+.screen{
+  width:100%;height:100%;border-radius:30px;overflow:hidden;position:relative;
+  background:#0e1424;display:flex;flex-direction:column;
+}
+.screen-bar{
+  padding:52px 20px 14px;display:flex;justify-content:space-between;align-items:center;
+}
+.screen-bar .t{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text)}
+.screen-bar .dots{display:flex;gap:8px}
+.screen-bar .dots i{width:30px;height:30px;border-radius:50%;background:var(--panel-2);
+  display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;color:var(--muted)}
+.screen-feed{flex:1;padding:6px 14px;display:grid;gap:10px;align-content:start}
+.card-m{
+  border-radius:14px;background:var(--panel);border:1px solid var(--line);
+  padding:12px 14px;display:flex;gap:12px;align-items:center;
+}
+.card-m .av{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.card-m .ln{flex:1;display:grid;gap:7px}
+.card-m .ln i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.1);font-style:normal}
+.card-m .ln i:first-child{width:70%;background:rgba(255,255,255,.18)}
+.card-m .ln i:last-child{width:45%}
+.card-m .av.a{background:linear-gradient(135deg,#35E0C8,#1a6e63)}
+.card-m .av.b{background:linear-gradient(135deg,#FFB454,#8a5a1e)}
+.card-m .av.c{background:linear-gradient(135deg,#7A8CFF,#333f80)}
+.screen-tab{
+  margin:10px 14px 16px;height:54px;border-radius:14px;
+  background:var(--panel);border:1px solid var(--line);
+  display:flex;justify-content:space-around;align-items:center;
+}
+.screen-tab i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.22);font-style:normal;position:relative}
+.screen-tab i.on{background:var(--accent);box-shadow:0 0 10px rgba(53,224,200,.6)}
+.screen-tab i.hot::after{
+  content:"";position:absolute;top:-3px;right:-3px;width:6px;height:6px;border-radius:50%;
+  background:#FF5A6E;border:1.5px solid var(--panel);
+}
+@media(max-width:900px){.work{grid-template-columns:1fr;padding:40px 28px;gap:44px}}
+
+/* ---------- case study ---------- */
+.case-block{margin-top:22px}
+.case-sub{
+  font-family:var(--font-display);font-size:22px;font-weight:700;margin:0 0 8px;
+  display:flex;align-items:baseline;gap:14px;
+}
+.case-sub .idx{font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.15em}
+.case-desc{color:var(--muted);font-size:14.5px;max-width:680px;margin-bottom:26px;text-wrap:pretty}
+/* case 02 - company A */
+.c2{margin-top:96px;padding-top:8px}
+.c2 .work-badge{margin-bottom:18px}
+.c2-title{font-family:var(--font-display);font-size:clamp(26px,3vw,38px);font-weight:700;margin-bottom:8px}
+.c2 .work-cn{font-size:15px;color:var(--muted);letter-spacing:.14em;margin-bottom:24px}
+.c2-chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.c2-chips .grp{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-right:8px;white-space:nowrap}
+.c2-chips span.t{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 12px;background:rgba(255,255,255,.02)}
+.c2-chips span.t.hi{color:var(--accent);border-color:rgba(53,224,200,.4)}
+.c2-row{display:flex;align-items:flex-start;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:10px}
+.c2-row .ic{width:34px;height:34px;border-radius:8px;flex-shrink:0}
+.c2-row b{display:block;font-family:var(--font-display);font-weight:500;font-size:15px;margin-bottom:4px}
+.c2-row p{font-size:13.5px;color:var(--muted);text-wrap:pretty}
+.c2-row .tag{margin-left:auto;font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:.12em;white-space:nowrap;padding-top:3px}
+@media(max-width:760px){.c2-row{flex-direction:column;gap:10px}.c2-row .tag{margin-left:0}}
+/* ---------- case tabs ---------- */
+.case-tabs{display:flex;gap:10px;margin-bottom:48px}
+.ctab{
+  flex:1;display:flex;align-items:baseline;gap:14px;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;
+  color:var(--muted);border:1px solid var(--line);border-radius:10px;
+  padding:16px 20px;background:transparent;cursor:pointer;text-align:left;
+  transition:border-color .25s,background .25s;
+}
+.ctab .no{font-size:10.5px;letter-spacing:.16em;white-space:nowrap}
+.ctab .ti{font-family:var(--font-display);font-size:15.5px;font-weight:600;color:var(--text);letter-spacing:0}
+.ctab:hover{border-color:var(--line-strong)}
+.ctab.on{border-color:rgba(53,224,200,.5);background:rgba(53,224,200,.06)}
+.ctab.on .no{color:var(--accent)}
+@media(max-width:700px){.case-tabs{flex-direction:column}.ctab{padding:13px 16px}}
+/* ---------- case 02 deliverable gallery ---------- */
+.c2-gallery{display:grid;grid-template-columns:1fr 1fr minmax(240px,.85fr);grid-template-rows:auto auto;gap:14px;margin-top:28px;align-items:stretch}
+.c2-gallery .vid-card{grid-column:3;grid-row:1/span 2}
+.c2-gallery .vid-card .vbody{aspect-ratio:auto;flex:1}
+.ig-card,.vid-card{
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  background:var(--panel);display:flex;flex-direction:column;transition:border-color .25s;
+}
+.ig-card:hover,.vid-card:hover{border-color:rgba(53,224,200,.4)}
+.ig-body{aspect-ratio:8/5;position:relative;overflow:hidden}
+.ig-body svg,.ig-body img,.vbody>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vbody{position:relative;aspect-ratio:9/13;overflow:hidden;flex:1}
+.vbody>svg{position:absolute;inset:0;width:100%;height:100%}
+.vplay{
+  position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;background:rgba(53,224,200,.92);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.vplay svg{width:18px;height:18px;margin-left:3px}
+.vdur{position:absolute;left:10px;bottom:32px;font-family:var(--font-mono);font-size:10px;color:#fff;background:rgba(0,0,0,.55);padding:3px 8px;border-radius:5px}
+.vtag{position:absolute;top:10px;left:10px;font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:#0B0F17;background:var(--accent);padding:3px 8px;border-radius:5px}
+.vbar{position:absolute;left:10px;right:10px;bottom:20px;height:3px;border-radius:2px;background:rgba(255,255,255,.25)}
+.vbar i{display:block;height:100%;border-radius:2px;background:var(--accent)}
+.gcap{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:12px 14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--text)}
+.gcap .mono{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);letter-spacing:.12em;white-space:nowrap}
+@media(max-width:860px){
+  .c2-gallery{grid-template-columns:1fr 1fr}
+  .c2-gallery .vid-card{grid-column:1/-1;grid-row:auto}
+  .c2-gallery .vid-card .vbody{aspect-ratio:16/10}
+}
+.deliv{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.deliv span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--accent);
+  border:1px solid rgba(53,224,200,.35);border-radius:6px;padding:6px 14px;background:var(--accent-tint)}
+.flow5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.flow5 .f{border-top:1px solid var(--line-strong);padding-top:18px;transition:border-color .3s}
+.flow5 .f:hover{border-top-color:var(--accent)}
+.flow5 .f .n{font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.15em;display:block;margin-bottom:10px}
+.flow5 .f h4{font-family:var(--font-display);font-size:15.5px;font-weight:500;margin-bottom:6px}
+.flow5 .f p{font-size:12.5px;color:var(--muted);text-wrap:pretty}
+@media(max-width:1000px){.flow5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.flow5{grid-template-columns:1fr}}
+.prin{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.prin .p{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 18px;transition:border-color .3s}
+.prin .p:hover{border-color:rgba(53,224,200,.4)}
+.prin .p h4{font-size:15px;font-family:var(--font-display);font-weight:500;margin-bottom:8px}
+.prin .p p{font-size:12.5px;color:var(--muted);text-wrap:pretty}
+@media(max-width:1000px){.prin{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.prin{grid-template-columns:1fr}}
+.uxmap{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px 20px;overflow-x:auto}
+.uxmap svg{min-width:760px;width:100%;height:auto;display:block}
+.screens{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.scell{display:grid;gap:12px;align-content:start}
+.mini{
+  border:1px solid var(--line-strong);border-radius:22px;overflow:hidden;
+  background:linear-gradient(160deg,#151d30,#0d1220);
+  box-shadow:0 14px 36px rgba(0,0,0,.4);
+  aspect-ratio:9/17;display:flex;flex-direction:column;position:relative;
+}
+.mini .mtop{padding:16px 16px 8px;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text)}
+.mini .mtop .r{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);font-weight:400}
+.mini .mbody{flex:1;padding:6px 14px 10px;display:grid;gap:10px;align-content:start;min-height:0}
+.mini .mcap{padding:2px 4px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.mini .mcap b{color:var(--text);font-weight:500;font-family:var(--font-display);font-size:16px}
+.mini .mcap .mono{font-family:var(--font-mono);font-size:12.5px;color:var(--accent);letter-spacing:.12em;white-space:nowrap}
+.sk{background:rgba(255,255,255,.09);border-radius:6px}
+.sk.t{height:9px}.sk.t.w40{width:40%}.sk.t.w60{width:60%}.sk.t.w75{width:75%}
+.chipbtn{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;color:#0B0F17;background:var(--accent);border-radius:6px;padding:10px 15px;text-align:center}
+.ghostbtn{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;color:var(--text);border:1px solid var(--line-strong);border-radius:6px;padding:10px 15px;text-align:center}
+.pag{display:flex;gap:6px;justify-content:center}
+.pag i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);font-style:normal}
+.pag i.on{background:var(--accent);width:18px;border-radius:3px}
+.tabmini{display:flex;justify-content:space-around;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;height:44px;margin:auto 12px 12px;flex-shrink:0}
+.tabmini i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.22);position:relative;font-style:normal}
+.tabmini i.on{background:var(--accent);box-shadow:0 0 8px rgba(53,224,200,.6)}
+.tabmini i.hot::after{content:"";position:absolute;top:-3px;right:-3px;width:6.5px;height:6.5px;border-radius:50%;background:#FF5A6E}
+.story{display:flex;gap:10px}
+.story i{width:34px;height:34px;border-radius:50%;flex-shrink:0;font-style:normal}
+.story i.a{background:linear-gradient(135deg,#35E0C8,#1a6e63)}
+.story i.b{background:linear-gradient(135deg,#FFB454,#8a5a1e)}
+.story i.c{background:linear-gradient(135deg,#7A8CFF,#333f80)}
+.story i.d{background:linear-gradient(135deg,#FF7A9E,#8a2f4b)}
+.fimg{height:78px;border-radius:10px}
+.fimg.a{background:linear-gradient(135deg,rgba(53,224,200,.55),rgba(26,110,99,.15))}
+.fimg.b{background:linear-gradient(135deg,rgba(255,180,84,.55),rgba(138,90,30,.15))}
+.fimg.c{background:linear-gradient(135deg,rgba(122,140,255,.55),rgba(51,63,128,.15))}
+.mmap{position:relative;flex:1;min-height:0;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#12233a,#0c1526)}
+.mmap svg{position:absolute;inset:0;width:100%;height:100%}
+.mlist{position:absolute;left:10px;right:10px;bottom:10px;display:grid;gap:8px}
+.mlist .lc{background:rgba(17,23,38,.94);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;gap:9px;align-items:center}
+.mlist .lc .dot{width:18px;height:18px;border-radius:6px;flex-shrink:0}
+.bub{max-width:84%;padding:9px 13px;border-radius:10px;font-size:12.5px;line-height:1.5}
+.bub.me{margin-left:auto;background:linear-gradient(135deg,#35E0C8,#2BC0D4);color:#0B0F17}
+.bub.you{background:var(--panel);border:1px solid var(--line);color:var(--text)}
+.inputbar{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-top:auto}
+.inputbar .sk{flex:1;height:10px}
+.inputbar .send{width:20px;height:20px;border-radius:50%;background:var(--accent)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border-radius:8px;padding:13px;font-size:12.5px;color:var(--text);border:1px solid var(--line);background:var(--panel);display:grid;gap:8px;align-content:start}
+.tile i{width:24px;height:24px;border-radius:8px;font-style:normal}
+.profile{display:grid;gap:12px}
+.prow{display:flex;gap:12px;align-items:center}
+.pav{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#35E0C8,#7A8CFF);flex-shrink:0}
+.stats{display:flex;gap:8px}
+.stats div{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--muted)}
+.stats div b{display:block;color:var(--text);font-size:14px}
+.menu .sk{height:11px;border-radius:5px;margin-bottom:11px}
+.menu .sk:last-child{margin-bottom:0}
+/* rich mockup components */
+.mini .ht{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);line-height:1.35}
+.mini .st{font-size:11.5px;color:var(--muted);line-height:1.55}
+.mini .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;color:var(--muted)}
+.mini .segs{display:flex;gap:7px}
+.mini .segs i{font-style:normal;font-family:var(--font-mono);font-size:10.5px;padding:6px 12px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.mini .segs i.on{color:var(--accent);border-color:rgba(53,224,200,.5);background:rgba(53,224,200,.08)}
+.post{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:8px}
+.phead{display:flex;align-items:center;gap:9px}
+.phead .av{width:26px;height:26px;border-radius:50%;flex-shrink:0}
+.phead .av.a{background:linear-gradient(135deg,#35E0C8,#1a6e63)}
+.phead .av.b{background:linear-gradient(135deg,#FFB454,#8a5a1e)}
+.phead .av.c{background:linear-gradient(135deg,#7A8CFF,#333f80)}
+.phead .nm{font-size:12.5px;color:var(--text);font-weight:600}
+.phead .tm{font-family:var(--font-mono);font-size:9.5px;color:var(--muted);margin-left:auto}
+.pacts{display:flex;gap:18px;font-family:var(--font-mono);font-size:10.5px;color:var(--muted)}
+.pacts b{color:var(--text);font-weight:500}
+.search{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 13px;font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.search::before{content:"⌕";color:var(--accent);font-size:13px}
+.cat{display:flex;gap:6px;flex-wrap:wrap}
+.cat i{font-style:normal;font-family:var(--font-mono);font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:5px 11px}
+.cat i.on{color:var(--accent);border-color:rgba(53,224,200,.5)}
+.mlist .lc span.tx{font-size:11.5px;color:var(--text)}
+.mlist .lc span.mt{margin-left:auto;font-family:var(--font-mono);font-size:9.5px;color:var(--muted);white-space:nowrap}
+.srow{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:11px 13px;font-size:12px;color:var(--text)}
+.srow .r{margin-left:auto;font-family:var(--font-mono);font-size:9.5px;color:var(--muted);white-space:nowrap}
+.srow .ic{width:22px;height:22px;border-radius:6px;flex-shrink:0}
+.typing{font-family:var(--font-mono);font-size:10.5px;color:var(--accent)}
+@media(max-width:1000px){.screens{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.screens{grid-template-columns:1fr}.mini{max-width:320px;margin:0 auto;width:100%}}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+.step{
+  border-top:1px solid var(--line-strong);padding-top:26px;position:relative;
+  transition:border-color .35s;
+}
+.step:hover{border-top-color:var(--accent)}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-family:var(--font-mono);font-size:13px;color:var(--accent);
+  display:block;margin-bottom:16px;letter-spacing:.15em;
+}
+.step h4{font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:10px}
+.step p{font-size:13.5px;color:var(--muted);text-wrap:pretty}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* ---------- CTA ---------- */
+.cta{
+  text-align:center;padding:80px 0 92px;position:relative;
+}
+.cta h2{
+  font-family:var(--font-display);font-size:clamp(32px,5vw,58px);
+  font-weight:700;line-height:1.15;letter-spacing:-.01em;text-wrap:balance;
+}
+.cta h2 .accent{color:var(--accent)}
+.cta p{color:var(--muted);margin:24px auto 44px;max-width:520px;font-size:16.5px}
+.cta-note{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);letter-spacing:.1em;margin-top:22px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index:1}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot-left{display:flex;align-items:center;gap:14px}
+.foot-left .n{font-family:var(--font-display);font-weight:700;font-size:16px;letter-spacing:.06em}
+.foot-left .c{font-size:12.5px;color:var(--muted)}
+.foot-meta{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);letter-spacing:.08em}
+
+/* ---------- hero visual ---------- */
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.hero-copy{min-width:0}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+}
+.hero-visual{position:relative;padding-bottom:36px}
+.hv-main{
+  width:86%;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line-strong);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+.hv-main img{display:block;width:100%;height:auto}
+/* 成果图墙：真实交付界面三联 */
+.hv-shots{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  background:var(--panel);padding:12px;
+}
+.hv-shots img{
+  height:330px;object-fit:cover;object-position:top;
+  border-radius:10px;border:1px solid var(--line);
+}
+.hv-float{
+  position:absolute;right:0;bottom:0;width:44%;
+  border-radius:10px;overflow:hidden;
+  border:5px solid var(--bg);
+  box-shadow:0 12px 32px rgba(0,0,0,.45);
+}
+.hv-float img{display:block;width:100%;height:250px;object-fit:cover;object-position:top}
+.hv-metric{
+  margin:14px 0 0 2%;
+  max-width:50%;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;
+  color:var(--muted);line-height:2;
+}
+.hv-metric::before{content:"◈ ";color:var(--accent)}
+.hv-badge{
+  position:absolute;top:-18px;right:6%;
+  background:var(--panel);border:1px solid var(--line-strong);
+  border-radius:8px;padding:10px 18px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--accent);
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g-item{
+  border-radius:var(--radius);overflow:hidden;position:relative;
+  border:1px solid var(--line);background:var(--panel);
+}
+.g-item img{
+  width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
+  transition:transform .6s ease;
+}
+.g-item:hover img{transform:scale(1.045)}
+.g-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;
+  background:linear-gradient(transparent,rgba(11,15,23,.74));
+  color:#fff;font-size:13.5px;font-weight:400;
+  display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+}
+.g-cap .mono{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.15em;opacity:.75;white-space:nowrap}
+@media(max-width:860px){.gallery{grid-template-columns:1fr}.g-item img{aspect-ratio:16/9}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="backdrop"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Gexon home">
+      <svg width="38" height="38" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 7 L54.6 20 L54.6 44 L32 57 L9.4 44 L9.4 20 Z"
+              stroke="#35E0C8" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M17 32 H25.5 L32 20.5 L38.5 43.5 L45 32"
+              stroke="#E8ECF4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand-name">GEXON</span><br>
+        <span class="brand-cn" data-i18n="brand_cn">極訊技術</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#services" data-i18n="nav_services">服務</a>
+      <a href="#work" data-i18n="nav_work">案例</a>
+      <a href="#process" data-i18n="nav_process">流程</a>
+      <a href="#contact" data-i18n="nav_contact">聯繫</a>
+      <button class="lang-toggle" id="langBtn" aria-label="Switch language">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/img/hero-interaction.jpg" alt="" loading="eager">
+      <div class="hero-bg-veil"></div>
+    </div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+      <p class="hero-tag reveal" data-i18n="hero_tag">AI-Powered Digital Studio</p>
+      <h1 class="reveal" data-i18n-html="hero_title">讓 AI 成為你的<br><span class="accent">增長引擎</span></h1>
+      <p class="hero-sub reveal" data-i18n-html="hero_sub">
+        Gexon Technology Limited（極訊技術有限公司）以 AI 為核心引擎，為品牌與企業提供從概念到上線的端到端交付：<strong>AI 應用定製</strong>、高保真產品原型、圖·文·視頻推廣素材、交互與品牌設計，以及流量投放諮詢與管理——<strong>讓創意落地，讓增長可衡量</strong>。
+      </p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-primary" href="#contact" data-i18n="hero_cta1">開始合作</a>
+        <a class="btn btn-ghost" href="#work" data-i18n="hero_cta2">查看案例</a>
+      </div>
+      <div class="hero-chips reveal">
+        <span class="chip" data-i18n="chip1">AI 應用定製</span>
+        <span class="chip" data-i18n="chip2">圖 · 文 · 視頻</span>
+        <span class="chip" data-i18n="chip3">交互 / 視覺設計</span>
+        <span class="chip" data-i18n="chip4">品牌設計</span>
+        <span class="chip" data-i18n="chip5">流量投放管理</span>
+      </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <span class="hv-badge">FindMe App · HI-FI PROTOTYPE · DELIVERED</span>
+        <div class="hv-main hv-shots">
+          <img src="assets/img/wahda-moments.png" alt="FindMe App Moments 高保真界面" loading="eager">
+          <img src="assets/img/wahda-messages.png" alt="FindMe App Messages 高保真界面" loading="eager">
+          <img src="assets/img/wahda-creation.png" alt="FindMe App Creation Hub 高保真界面" loading="eager">
+        </div>
+        <div class="hv-float">
+          <img src="assets/img/wahda-account.png" alt="FindMe App My Account 高保真界面" loading="lazy">
+        </div>
+        <p class="hv-metric">6 SCREENS · 12 DIAGRAMS · 120+ REQ</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-label" data-i18n="svc_label">Services</p>
+        <h2 class="sec-title" data-i18n="svc_title">從創意到增長，一條鏈路交付</h2>
+      </div>
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <span class="svc-num">01</span>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#35E0C8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+          </div>
+          <h3 data-i18n="svc1_t">AI 應用能力定製</h3>
+          <p data-i18n="svc1_d">將 AI 能力嵌入你的產品與業務流程：內容生成、智能客服、數據洞察等場景化定製開發與集成。</p>
+        </article>
+        <article class="svc reveal">
+          <span class="svc-num">02</span>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#35E0C8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="8" r="1.5"/></svg>
+          </div>
+          <h3 data-i18n="svc2_t">線上推廣素材定製</h3>
+          <p data-i18n="svc2_d">圖、文、視頻全品類營銷素材：以 AI 提效、以創意定調，為互聯網線上推廣持續供給高質量內容。</p>
+        </article>
+        <article class="svc reveal">
+          <span class="svc-num">03</span>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#35E0C8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h6M6 13h4"/><path d="M15 9l3 3-3 3"/></svg>
+          </div>
+          <h3 data-i18n="svc3_t">軟件與 App 交互 · 視覺定製</h3>
+          <p data-i18n="svc3_d">從信息架構、交互流程到高保真視覺與原型：為軟件與移動應用打造好用又好看的產品體驗。</p>
+        </article>
+        <article class="svc reveal">
+          <span class="svc-num">04</span>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#35E0C8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/><path d="M8 12h8M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
+          </div>
+          <h3 data-i18n="svc4_t">品牌定製設計</h3>
+          <p data-i18n="svc4_d">Logo、視覺識別系統與品牌語言：為品牌建立可長期積累、跨媒介一致的識別資產。</p>
+        </article>
+        <article class="svc reveal">
+          <span class="svc-num">05</span>
+          <div class="svc-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#35E0C8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 16v-5M10 16V7M15 16v-8M20 16V4"/></svg>
+          </div>
+          <h3 data-i18n="svc5_t">流量投放諮詢與管理</h3>
+          <p data-i18n="svc5_d">渠道策略、投放執行與數據覆盤：以可量化的 ROI 視角管理互聯網渠道流量，持續優化增長效率。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="studio">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-label" data-i18n="gal_label">Inside Gexon</p>
+        <h2 class="sec-title" data-i18n="gal_title">我們如何工作</h2>
+      </div>
+      <div class="gallery">
+        <figure class="g-item reveal">
+          <img src="assets/img/interaction-wireframe.jpg" alt="產品交互線框草圖" loading="lazy">
+          <figcaption class="g-cap">
+            <span data-i18n="gal1_c">產品交互 · 線框與用户流程</span>
+            <span class="mono">01 / INTERACTION</span>
+          </figcaption>
+        </figure>
+        <figure class="g-item reveal">
+          <img src="assets/img/product-ui.jpg" alt="產品 UI 高保真設計" loading="lazy">
+          <figcaption class="g-cap">
+            <span data-i18n="gal2_c">產品 UI · 高保真界面設計</span>
+            <span class="mono">02 / UI DESIGN</span>
+          </figcaption>
+        </figure>
+        <figure class="g-item reveal">
+          <img src="assets/img/brand-design.jpg" alt="品牌色彩與視覺識別設計" loading="lazy">
+          <figcaption class="g-cap">
+            <span data-i18n="gal3_c">品牌設計 · 色彩與視覺識別</span>
+            <span class="mono">03 / BRAND</span>
+          </figcaption>
+        </figure>
+        <figure class="g-item reveal">
+          <img src="assets/img/gallery-analytics.jpg" alt="投放數據覆盤" loading="lazy">
+          <figcaption class="g-cap">
+            <span data-i18n="gal4_c">投放增長 · 數據與覆盤</span>
+            <span class="mono">04 / GROWTH</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-label" data-i18n="work_label">Featured Work</p>
+        <h2 class="sec-title" data-i18n="work_title">交付案例</h2>
+      </div>
+
+      <!-- CASE TABS -->
+      <div class="case-tabs reveal" role="tablist">
+        <button class="ctab on" data-pane="pane-1" role="tab" aria-selected="true">
+          <span class="no">CASE 01</span><span class="ti" data-i18n="tab1_t">FindMe App · 產品原型</span>
+        </button>
+        <button class="ctab" data-pane="pane-2" role="tab" aria-selected="false">
+          <span class="no">CASE 02</span><span class="ti" data-i18n="tab2_t">A 公司 · 線上素材</span>
+        </button>
+      </div>
+
+      <div class="case-pane" id="pane-1">
+      <!-- 01 概述 -->
+      <div class="work reveal">
+        <div>
+          <p class="work-badge" data-i18n="work_badge">First Delivered Product</p>
+          <h3>FindMe App</h3>
+          <p class="work-cn" data-i18n="work_cn">GEXON 首個交付產出 · 社交生活方式超級 App</p>
+          <p data-i18n="work_desc">
+            面向全球用戶的社交生活方式超級 App：集成信息流、地圖本地生活、即時通訊與創作者生態。
+            Gexon 負責從概念驗證、UX 架構、交互與視覺設計，到高保真原型與線上部署的完整交付。
+          </p>
+          <div class="deliv">
+            <span data-i18n="del1">UX 地圖</span>
+            <span data-i18n="del2">交互流程文檔</span>
+            <span data-i18n="del3">高保真原型</span>
+            <span data-i18n="del4">設計系統</span>
+            <span data-i18n="del5">線上部署</span>
+          </div>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="screen-bar">
+              <span class="t">FindMe</span>
+              <span class="dots"><i>◉</i><i>◎</i><i>◌</i></span>
+            </div>
+            <div class="screen-feed">
+              <div class="card-m"><span class="av a"></span><span class="ln"><i></i><i></i></span></div>
+              <div class="card-m"><span class="av b"></span><span class="ln"><i></i><i></i></span></div>
+              <div class="card-m"><span class="av c"></span><span class="ln"><i></i><i></i></span></div>
+            </div>
+            <div class="screen-tab">
+              <i class="on"></i><i></i><i class="hot"></i><i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 交付流程 -->
+      <div class="case-block reveal">
+        <p class="case-sub"><span class="idx">02</span><span data-i18n="cw_flow_t">交付流程</span></p>
+        <p class="case-desc" data-i18n="cw_flow_d">五個階段閉環：每個階段都有明確的產出物與評審節點。</p>
+        <div class="flow5">
+          <div class="f">
+            <span class="n">STEP 01</span>
+            <h4 data-i18n="cf1_t">需求診斷</h4>
+            <p data-i18n="cf1_d">目標用戶畫像、場景梳理與成功指標定義。</p>
+          </div>
+          <div class="f">
+            <span class="n">STEP 02</span>
+            <h4 data-i18n="cf2_t">UX 地圖與架構</h4>
+            <p data-i18n="cf2_d">站點地圖、用戶流程圖與導航模型定型。</p>
+          </div>
+          <div class="f">
+            <span class="n">STEP 03</span>
+            <h4 data-i18n="cf3_t">交互設計</h4>
+            <p data-i18n="cf3_d">核心流程、手勢定義與全狀態（空/錯/載入）覆蓋。</p>
+          </div>
+          <div class="f">
+            <span class="n">STEP 04</span>
+            <h4 data-i18n="cf4_t">高保真原型</h4>
+            <p data-i18n="cf4_d">完整視覺語言 + 可點擊原型，多輪可用性走查。</p>
+          </div>
+          <div class="f">
+            <span class="n">STEP 05</span>
+            <h4 data-i18n="cf5_t">線上部署</h4>
+            <p data-i18n="cf5_d">原型部署上線、交付源文件與迭代建議。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 設計思路 -->
+      <div class="case-block reveal">
+        <p class="case-sub"><span class="idx">03</span><span data-i18n="cw_pr_t">設計思路</span></p>
+        <p class="case-desc" data-i18n="cw_pr_d">四條貫穿全程的設計原則，決定了每一個頁面的取捨。</p>
+        <div class="prin">
+          <div class="p">
+            <h4 data-i18n="cp1_t">內容優先</h4>
+            <p data-i18n="cp1_d">資訊流以圖像為第一視覺層級，容器線條克制，讓內容自己說話。</p>
+          </div>
+          <div class="p">
+            <h4 data-i18n="cp2_t">單手可達</h4>
+            <p data-i18n="cp2_d">核心操作集中在螢幕下半部拇指熱區，重要入口一屏內可達。</p>
+          </div>
+          <div class="p">
+            <h4 data-i18n="cp3_t">熟悉的導航</h4>
+            <p data-i18n="cp3_d">底部四 Tab 對齊主流即時通訊習慣，未讀紅點精準標記動態。</p>
+          </div>
+          <div class="p">
+            <h4 data-i18n="cp4_t">地圖即入口</h4>
+            <p data-i18n="cp4_d">本地生活採用「地圖 + 列表」雙模式，所見即所達。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 UX 地圖 -->
+      <div class="case-block reveal">
+        <p class="case-sub"><span class="idx">04</span><span data-i18n="cw_map_t">UX 地圖</span></p>
+        <p class="case-desc" data-i18n="cw_map_d">從入口層到主導航、再到核心場景的完整信息架構。</p>
+        <div class="uxmap">
+          <svg viewBox="0 0 1040 300" role="img" aria-label="FindMe App UX map">
+            <defs>
+              <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="#35E0C8"/>
+              </marker>
+            </defs>
+            <g font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#35E0C8">
+              <text x="40" y="34">01 ENTRY</text>
+              <text x="400" y="34">02 MAIN NAV · 4 TABS</text>
+              <text x="760" y="34">03 CORE SCENARIOS</text>
+            </g>
+            <g font-family="'Space Grotesk','JetBrains Mono',sans-serif" font-size="13" fill="#E8ECF4">
+              <rect x="40" y="70" width="200" height="44" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="60" y="97">Onboarding</text>
+              <rect x="40" y="150" width="200" height="44" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="60" y="177">Sign In / Sign Up</text>
+              <rect x="400" y="62" width="220" height="40" rx="12" fill="#141B2C" stroke="rgba(53,224,200,.5)"/>
+              <text x="420" y="87">Moments</text>
+              <rect x="400" y="114" width="220" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="420" y="139">Near</text>
+              <rect x="400" y="166" width="220" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="420" y="191">Messages</text>
+              <rect x="400" y="218" width="220" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="420" y="243">My Account</text>
+              <rect x="760" y="62" width="240" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="780" y="87">Browse · Like &amp; Comment</text>
+              <rect x="760" y="114" width="240" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="780" y="139">Search · Visit · Deals</text>
+              <rect x="760" y="166" width="240" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="780" y="191">Chat · Voice · Live</text>
+              <rect x="760" y="218" width="240" height="40" rx="12" fill="#141B2C" stroke="rgba(255,255,255,.14)"/>
+              <text x="780" y="243">Profile · Creation Hub</text>
+            </g>
+            <g stroke="#35E0C8" stroke-width="1.5" fill="none" opacity=".8">
+              <path d="M240 92 C320 92 320 82 396 82" marker-end="url(#ar)"/>
+              <path d="M240 172 C320 172 320 182 396 186" marker-end="url(#ar)"/>
+              <path d="M620 82 L756 82" marker-end="url(#ar)"/>
+              <path d="M620 134 L756 134" marker-end="url(#ar)"/>
+              <path d="M620 186 L756 186" marker-end="url(#ar)"/>
+              <path d="M620 238 L756 238" marker-end="url(#ar)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 05 頁面模擬 -->
+      <div class="case-block reveal">
+        <p class="case-sub"><span class="idx">05</span><span data-i18n="cw_screens_t">高保真頁面模擬</span></p>
+        <p class="case-desc" data-i18n="cw_screens_d">六個關鍵頁面的界面模擬，展示導航、層級與視覺語言的落地方式。</p>
+        <div class="screens">
+          <!-- S1 Onboarding -->
+          <figure class="scell">
+            <div class="mini" aria-hidden="true">
+              <div class="mtop"><span>FindMe</span><span class="r">SKIP</span></div>
+              <div class="mbody">
+                <div class="fimg" style="height:150px;background:linear-gradient(140deg,rgba(53,224,200,.55),rgba(122,140,255,.3));border-radius:16px;display:flex;align-items:center;justify-content:center">
+                  <svg width="52" height="52" viewBox="0 0 64 64" fill="none"><path d="M32 7 L54.6 20 L54.6 44 L32 57 L9.4 44 L9.4 20 Z" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><path d="M17 32 H25.5 L32 20.5 L38.5 43.5 L45 32" stroke="#35E0C8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <p class="ht">Connect. Discover. Create.</p>
+                <p class="st">One app for your community — moments, nearby places, chats and creator tools, all in one place.</p>
+                <div class="chipbtn">GET STARTED</div>
+                <div class="ghostbtn">I ALREADY HAVE AN ACCOUNT</div>
+                <div class="pag"><i class="on"></i><i></i><i></i></div>
+              </div>
+            </div>
+            <figcaption class="mcap"><span class="mono">ONBOARDING</span></figcaption>
+          </figure>
+          <!-- S2 Moments -->
+          <figure class="scell">
+            <div class="mini" aria-hidden="true">
+              <div class="mtop"><span>Moments</span><span class="r">◉ ◎</span></div>
+              <div class="mbody">
+                <div class="segs"><i class="on">RECOMMENDATION</i><i>FOLLOWING</i><i>NEARBY</i></div>
+                <div class="story"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>
+                <div class="post">
+                  <div class="phead"><span class="av a"></span><span class="nm">Jessica R.</span><span class="tm">2H</span></div>
+                  <div class="fimg a"></div>
+                  <p class="st">Weekend brunch at the new café downtown ☕</p>
+                  <div class="pacts"><span>♥ <b>1.2k</b></span><span>💬 <b>86</b></span><span>↗ SHARE</span></div>
+                </div>
+                <div class="post">
+                  <div class="phead"><span class="av b"></span><span class="nm">David K.</span><span class="tm">5H</span></div>
+                  <div class="fimg b"></div>
+                  <div class="pacts"><span>♥ <b>642</b></span><span>💬 <b>23</b></span></div>
+                </div>
+              </div>
+              <div class="tabmini"><i class="on"></i><i></i><i class="hot"></i><i></i></div>
+            </div>
+            <figcaption class="mcap"><span class="mono">MOMENTS</span></figcaption>
+          </figure>
+          <!-- S3 Near -->
+          <figure class="scell">
+            <div class="mini" aria-hidden="true">
+              <div class="mtop"><span>Near</span><span class="r">LIST / MAP</span></div>
+              <div class="mbody" style="padding-bottom:0">
+                <div class="search">Search places, food, services…</div>
+                <div class="cat"><i class="on">ALL</i><i>FOOD</i><i>CAFÉS</i><i>PARKS</i><i>SHOPS</i></div>
+                <div class="mmap">
+                  <svg viewBox="0 0 200 210" preserveAspectRatio="none">
+                    <path d="M0 60 L200 40" stroke="rgba(255,255,255,.1)" stroke-width="6"/>
+                    <path d="M40 0 L60 210" stroke="rgba(255,255,255,.08)" stroke-width="8"/>
+                    <path d="M0 130 C60 120 120 150 200 130" stroke="rgba(255,255,255,.1)" stroke-width="5"/>
+                    <path d="M140 0 L160 210" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
+                    <circle cx="88" cy="70" r="7" fill="#35E0C8"/>
+                    <circle cx="130" cy="95" r="6" fill="#FFB454"/>
+                    <circle cx="70" cy="120" r="5" fill="#7A8CFF"/>
+                  </svg>
+                  <div class="mlist">
+                    <div class="lc"><span class="dot" style="background:linear-gradient(135deg,#35E0C8,#1a6e63)"></span><span class="tx">The Olive Café</span><span class="mt">0.4 KM · ★ 4.8</span></div>
+                    <div class="lc"><span class="dot" style="background:linear-gradient(135deg,#FFB454,#8a5a1e)"></span><span class="tx">Central Market</span><span class="mt">1.1 KM · ★ 4.6</span></div>
+                    <div class="lc"><span class="dot" style="background:linear-gradient(135deg,#7A8CFF,#333f80)"></span><span class="tx">City Museum</span><span class="mt">1.8 KM · ★ 4.9</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabmini"><i></i><i class="on"></i><i class="hot"></i><i></i></div>
+            </div>
+            <figcaption class="mcap"><span class="mono">NEAR</span></figcaption>
+          </figure>
+          <!-- S4 Messages -->
+          <figure class="scell">
+            <div class="mini" aria-hidden="true">
+              <div class="mtop"><span>Messages</span><span class="r">2 NEW</span></div>
+              <div class="mbody" style="align-content:end">
+                <p class="lbl" style="justify-self:center">TODAY · 2:40 PM</p>
+                <div class="bub you">Hey! Are you free for a quick call later?</div>
+                <div class="bub me">Sure, how about 4 PM?</div>
+                <div class="bub you">Works for me. Could you also share the latest prototype link?</div>
+                <div class="bub me">Just sent it to your email.</div>
+                <div class="bub you">Got it! The onboarding flow feels really smooth.</div>
+                <div class="bub me">Great! Let me know if anything feels off.</div>
+                <div class="bub you">Can I preview it on my phone?</div>
+                <p class="typing">Jessica is typing…</p>
+                <div class="inputbar"><span style="font-size:11px;color:var(--muted)">Type a message</span><span class="send"></span></div>
+              </div>
+              <div class="tabmini"><i></i><i></i><i class="on hot"></i><i></i></div>
+            </div>
+            <figcaption class="mcap"><span class="mono">MESSAGES</span></figcaption>
+          </figure>
+          <!-- S5 Creation Hub -->
+          <figure class="scell">
+            <div class="mini" aria-hidden="true">
+              <div class="mtop"><span>Creation Hub</span><span class="r">+ NEW</span></div>
+              <div class="mbody">
+                <div class="tiles">
+                  <div class="tile"><i style="background:linear-gradient(135deg,#35E0C8,#1a6e63)"></i>Post</div>
+                  <div class="tile"><i style="background:linear-gradient(135deg,#FFB454,#8a5a1e)"></i>Video</div>
+                  <div class="tile"><i style="background:linear-gradient(135deg,#FF7A9E,#8a2f4b)"></i>Live</div>
+                  <div class="tile"><i style="background:linear-gradient(135deg,#7A8CFF,#333f80)"></i>Shop</div>
+                </div>
+                <p class="lbl">DRAFTS</p>
+                <div class="srow"><span class="ic" style="background:linear-gradient(135deg,#35E0C8,#1a6e63)"></span>My Vlog<span class="r">2M AGO</span></div>
+                <div class="srow"><span class="ic" style="background:linear-gradient(135deg,#FFB454,#8a5a1e)"></span>Christmas Campaign<span class="r">1H AGO</span></div>
+                <p class="lbl">ANALYTICS · 7 DAYS</p>
+                <div class="srow"><span style="font-family:var(--font-mono);font-size:12px;color:var(--text)">Views <b style="color:var(--accent)">12.4k</b> · +18%</span><span class="r">DETAILS ›</span></div>
+              </div>
+              <div class="tabmini"><i></i><i></i><i></i><i class="on"></i></div>
+            </div>
+            <figcaption class="mcap"><span class="mono">CREATION HUB</span></figcaption>
+          </figure>
+          <!-- S6 My Account -->
+          <figure class="scell">
+            <div class="mini" aria-hidden="true">
+              <div class="mtop"><span>My Account</span><span class="r">⚙</span></div>
+              <div class="mbody">
+                <div class="profile">
+                  <div class="prow"><span class="pav"></span><span style="display:grid;gap:5px"><span style="font-size:14px;font-weight:700;color:var(--text);font-family:var(--font-display)">Lucy P.</span><span class="lbl">@LUCY.P · CREATOR</span></span></div>
+                  <div class="stats">
+                    <div><b>128</b>POSTS</div>
+                    <div><b>2.4k</b>FOLLOWERS</div>
+                    <div><b>312</b>FOLLOWING</div>
+                  </div>
+                </div>
+                <div class="srow"><span class="ic" style="background:linear-gradient(135deg,#35E0C8,#1a6e63)"></span>Edit Profile<span class="r">›</span></div>
+                <div class="srow"><span class="ic" style="background:linear-gradient(135deg,#FFB454,#8a5a1e)"></span>Wallet &amp; Orders<span class="r">›</span></div>
+                <div class="srow"><span class="ic" style="background:linear-gradient(135deg,#7A8CFF,#333f80)"></span>Saved Places<span class="r">›</span></div>
+                <div class="srow"><span class="ic" style="background:linear-gradient(135deg,#FF7A9E,#8a2f4b)"></span>Settings<span class="r">›</span></div>
+              </div>
+              <div class="tabmini"><i></i><i></i><i></i><i class="on"></i></div>
+            </div>
+            <figcaption class="mcap"><span class="mono">MY ACCOUNT</span></figcaption>
+          </figure>
+        </div>
+      </div>
+      </div><!-- /pane-1 -->
+
+      <div class="case-pane" id="pane-2" hidden>
+      <!-- CASE 02 · Company A -->
+      <div class="c2 reveal">
+        <p class="work-badge" data-i18n="ca2_badge">Case 02 · Creative Asset Production</p>
+        <h3 class="c2-title" data-i18n="ca2_title">A 公司</h3>
+        <p class="work-cn" data-i18n="ca2_cn">本地生活廣告投放服務商 · 定制化線上素材製作</p>
+        <p class="case-desc" data-i18n="ca2_desc">
+          A 公司是一家專注於線下本地生活服務商的廣告投放服務商，為其客戶在小紅書、抖音、百度與高德地圖
+          進行流量投放與線上優化。Gexon 為其提供定制化的線上素材製作，以五步閉環支撐持續投放：
+          從需求分析、渠道選擇，到創意設計、素材生成與客戶交付。
+        </p>
+        <div class="c2-chips">
+          <span class="grp" data-i18n="ca2_g1">客戶類型</span>
+          <span class="t" data-i18n="ca2_c1">區域裝修公司</span>
+          <span class="t" data-i18n="ca2_c2">連鎖餐飲</span>
+          <span class="t" data-i18n="ca2_c3">本地零售商</span>
+        </div>
+        <div class="c2-chips">
+          <span class="grp" data-i18n="ca2_g2">投放渠道</span>
+          <span class="t hi">小紅書 RED</span>
+          <span class="t hi">抖音 TikTok</span>
+          <span class="t hi">百度 Baidu</span>
+          <span class="t hi">高德地圖 Amap</span>
+        </div>
+
+        <div class="case-block" style="margin-top:44px">
+          <p class="case-sub"><span class="idx">01</span><span data-i18n="ca2f_t">素材交付流程</span></p>
+          <div class="flow5">
+            <div class="f">
+              <span class="n">STEP 01</span>
+              <h4 data-i18n="ca2f1_t">需求分析</h4>
+              <p data-i18n="ca2f1_d">拆解客戶業務目標、受眾畫像與投放 KPI。</p>
+            </div>
+            <div class="f">
+              <span class="n">STEP 02</span>
+              <h4 data-i18n="ca2f2_t">投流渠道選擇</h4>
+              <p data-i18n="ca2f2_d">按渠道特性組合小紅書 / 抖音 / 百度 / 高德。</p>
+            </div>
+            <div class="f">
+              <span class="n">STEP 03</span>
+              <h4 data-i18n="ca2f3_t">創意設計</h4>
+              <p data-i18n="ca2f3_d">確定視覺方向、選題角度與內容鉤子。</p>
+            </div>
+            <div class="f">
+              <span class="n">STEP 04</span>
+              <h4 data-i18n="ca2f4_t">素材生成</h4>
+              <p data-i18n="ca2f4_d">批量產出圖片、視頻與文案的多尺寸版本。</p>
+            </div>
+            <div class="f">
+              <span class="n">STEP 05</span>
+              <h4 data-i18n="ca2f5_t">客戶交付</h4>
+              <p data-i18n="ca2f5_d">按渠道規範打包交付，同步投放反饋迭代。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-block" style="margin-top:44px">
+          <p class="case-sub"><span class="idx">02</span><span data-i18n="ca2ex_t">示例項目 · 區域裝修公司</span></p>
+          <p class="case-desc" data-i18n="ca2ex_d">以一家區域裝修公司為例，Gexon 交付以下四類素材，支撐小紅書為主陣地的持續投放：</p>
+          <div class="c2-row">
+            <span class="ic" style="background:linear-gradient(135deg,#FF7A9E,#8a2f4b)"></span>
+            <span style="flex:1"><b data-i18n="ca2e1_t">裝修案例圖片組</b><p data-i18n="ca2e1_d">真實案例攝影與圖文卡片，覆蓋戶型改造前後對比，首圖針對小紅書信息流點擊優化。</p></span>
+            <span class="tag" data-i18n="ca2e1_tg">小紅書 · 圖文</span>
+          </div>
+          <div class="c2-row">
+            <span class="ic" style="background:linear-gradient(135deg,#FFB454,#8a5a1e)"></span>
+            <span style="flex:1"><b data-i18n="ca2e2_t">裝修案例視頻</b><p data-i18n="ca2e2_d">工地實拍與效果對比剪輯的 15–30 秒豎版短視頻，配節奏卡點與字幕，適配抖音與小紅書雙渠道。</p></span>
+            <span class="tag" data-i18n="ca2e2_tg">小紅書 / 抖音 · 視頻</span>
+          </div>
+          <div class="c2-row">
+            <span class="ic" style="background:linear-gradient(135deg,#35E0C8,#1a6e63)"></span>
+            <span style="flex:1"><b data-i18n="ca2e3_t">介紹文案</b><p data-i18n="ca2e3_d">公司介紹、服務優勢與用戶見證的基礎文案，並衍生多組投放變體，供 A/B 測試選優。</p></span>
+            <span class="tag" data-i18n="ca2e3_tg">全渠道 · 文案</span>
+          </div>
+          <div class="c2-row">
+            <span class="ic" style="background:linear-gradient(135deg,#7A8CFF,#333f80)"></span>
+            <span style="flex:1"><b data-i18n="ca2e4_t">持續發布計劃</b><p data-i18n="ca2e4_d">按週排期的內容日曆與選題庫，覆蓋案例展示、過程記錄與知識科普三條內容線，保證賬號持續活躍。</p></span>
+            <span class="tag" data-i18n="ca2e4_tg">小紅書 · 運營</span>
+          </div>
+
+          <!-- deliverable mockups -->
+          <div class="c2-gallery">
+            <figure class="ig-card">
+              <div class="ig-body">
+                <img src="assets/img/reno-before.jpg" alt="客厅改造前实景" loading="lazy">
+              </div>
+              <figcaption class="gcap"><span data-i18n="ca2g1_t">裝修設計圖 · 改造前</span><span class="mono">BEFORE</span></figcaption>
+            </figure>
+            <figure class="ig-card">
+              <div class="ig-body">
+                <img src="assets/img/reno-after.jpg" alt="客厅改造后实景" loading="lazy">
+              </div>
+              <figcaption class="gcap"><span data-i18n="ca2g2_t">裝修設計圖 · 改造後</span><span class="mono">AFTER</span></figcaption>
+            </figure>
+            <figure class="ig-card">
+              <div class="ig-body">
+                <img src="assets/img/reno-kitchen-before.jpg" alt="厨房改造前实景" loading="lazy">
+              </div>
+              <figcaption class="gcap"><span data-i18n="ca2g4_t">廚房設計圖 · 改造前</span><span class="mono">BEFORE</span></figcaption>
+            </figure>
+            <figure class="ig-card">
+              <div class="ig-body">
+                <img src="assets/img/reno-kitchen-after.jpg" alt="厨房改造后实景" loading="lazy">
+              </div>
+              <figcaption class="gcap"><span data-i18n="ca2g5_t">廚房設計圖 · 改造後</span><span class="mono">AFTER</span></figcaption>
+            </figure>
+            <figure class="vid-card">
+              <div class="vbody">
+                <img src="assets/img/reno-video-cover.jpg" alt="装修案例视频封面" loading="lazy">
+                <div class="vplay"><svg viewBox="0 0 24 24"><path d="M8 5 L19 12 L8 19 Z" fill="#0B0F17"/></svg></div>
+                <span class="vtag">9:16 · VERTICAL</span>
+                <span class="vdur">0:19 / 0:30</span>
+                <div class="vbar"><i style="width:63%"></i></div>
+              </div>
+              <figcaption class="gcap"><span data-i18n="ca2g3_t">裝修案例視頻 · 抖音 / 小紅書</span><span class="mono">15–30S</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      </div><!-- /pane-2 -->
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-label" data-i18n="proc_label">Process</p>
+        <h2 class="sec-title" data-i18n="proc_title">清晰透明的合作流程</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h4 data-i18n="p1_t">需求診斷</h4>
+          <p data-i18n="p1_d">理解業務目標與受眾，明確交付範圍與成功指標。</p>
+        </div>
+        <div class="step reveal">
+          <h4 data-i18n="p2_t">方案與原型</h4>
+          <p data-i18n="p2_d">輸出設計方案 / 原型 / 素材樣稿，快速對齊方向。</p>
+        </div>
+        <div class="step reveal">
+          <h4 data-i18n="p3_t">迭代與交付</h4>
+          <p data-i18n="p3_d">多輪反饋迭代，按里程碑交付可用成品與源文件。</p>
+        </div>
+        <div class="step reveal">
+          <h4 data-i18n="p4_t">增長運營</h4>
+          <p data-i18n="p4_d">投放上線、數據回收與持續優化，讓產出產生回報。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <h2 class="reveal" data-i18n-html="cta_title">下一個產品，<br>從<span class="accent">這裏</span>開始。</h2>
+      <p class="reveal" data-i18n="cta_sub">告訴我們你的業務目標，Gexon 為你定製 AI 時代的設計與增長方案。</p>
+      <div class="reveal">
+        <a class="btn btn-primary" href="mailto:gexon.tech@outlook.com?subject=%E5%95%86%E5%8B%99%E5%90%88%E4%BD%9C%E8%AB%AE%E8%A9%A2%20-%20Gexon" id="ctaBtn" data-i18n="cta_btn">聯繫我們</a>
+        <p class="cta-note"><a href="mailto:gexon.tech@outlook.com" style="color:inherit">gexon.tech@outlook.com</a></p>
+        <p class="cta-note" style="font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em">Unit A15, 20/F, Tower 1, Enterprise Square, 9 Sheung Yuet Road, Kowloon, Hong Kong</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-left">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 7 L54.6 20 L54.6 44 L32 57 L9.4 44 L9.4 20 Z"
+              stroke="#35E0C8" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M17 32 H25.5 L32 20.5 L38.5 43.5 L45 32"
+              stroke="#E8ECF4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="n">GEXON</div>
+        <div class="c">Gexon Technology Limited · 極訊技術有限公司</div>
+        <div class="c"><a href="mailto:gexon.tech@outlook.com" style="color:var(--accent)">gexon.tech@outlook.com</a></div>
+        <div class="c" style="font-family:var(--font-mono);font-size:11px;letter-spacing:.03em">Unit A15, 20/F, Tower 1, Enterprise Square, 9 Sheung Yuet Road, Kowloon, Hong Kong</div>
+      </div>
+    </div>
+    <div class="foot-meta">© 2026 Gexon Technology Limited. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* ---------- i18n ---------- */
+const I18N = {
+  en: {
+    brand_cn: "TECHNOLOGY LIMITED",
+    nav_services:"Services", nav_work:"Work", nav_process:"Process", nav_contact:"Contact",
+    hero_tag:"AI-Powered Digital Studio",
+    hero_title:'Make AI your<br><span class="accent">growth engine</span>',
+    hero_sub:'Gexon Technology Limited turns AI into a growth engine — end-to-end delivery from concept to launch: <strong>customized AI capabilities</strong>, high-fidelity product prototypes, image / copy / video campaign assets, interaction &amp; brand design, and ads &amp; traffic management. <strong>Creativity that ships, growth you can measure.</strong>',
+    hero_cta1:"Start a Project", hero_cta2:"See Our Work",
+    chip1:"Custom AI Apps", chip2:"Image · Copy · Video", chip3:"UX / Visual Design", chip4:"Brand Design", chip5:"Ads &amp; Traffic",
+    svc_label:"Services", svc_title:"From idea to growth, delivered on one pipeline",
+    svc1_t:"Custom AI Application", svc1_d:"Embed AI into your product and workflows: content generation, intelligent support, data insight — scenario-driven custom development and integration.",
+    svc2_t:"Marketing Asset Production", svc2_d:"Images, copy and video at full scale: AI-accelerated, creativity-led content supply for online campaigns.",
+    svc3_t:"Software & App UX · Visual", svc3_d:"From information architecture and flows to high-fidelity visuals and prototypes — products that work beautifully.",
+    svc4_t:"Brand Identity Design", svc4_d:"Logo, visual identity systems and brand language: recognition assets built to last across every medium.",
+    svc5_t:"Ads & Traffic Management", svc5_d:"Channel strategy, campaign execution and data review — managing internet traffic with a measurable ROI mindset.",
+    gal_label:"Inside Gexon", gal_title:"How we work",
+    gal1_c:"Interaction design & wireframes", gal2_c:"Product UI & hi-fi interfaces", gal3_c:"Brand identity & visual language", gal4_c:"Growth & data review",
+    work_label:"Featured Work", work_title:"Delivered Work",
+    work_badge:"First Delivered Product",
+    work_cn:"GEXON's first delivery · Product Prototype",
+    work_desc:"A social lifestyle super-app for a global audience: feeds, local life, messaging and creator ecosystem — designed and delivered from concept to interactive prototype by Gexon.",
+    work_f1:"Product concept & information architecture",
+    work_f2:"Core interaction flows & high-fidelity prototype",
+    work_f3:"Visual language & design system",
+    del1:"UX Map", del2:"Interaction Flows", del3:"Hi-fi Prototype", del4:"Design System", del5:"Deployment",
+    cw_flow_t:"Delivery Process", cw_flow_d:"Five closed-loop stages — each with clear deliverables and review checkpoints.",
+    cf1_t:"Discovery", cf1_d:"User personas, scenario mapping and success metrics.",
+    cf2_t:"UX Map & IA", cf2_d:"Sitemap, user flows and the navigation model.",
+    cf3_t:"Interaction Design", cf3_d:"Core flows, gestures and full state coverage (empty / error / loading).",
+    cf4_t:"Hi-fi Prototype", cf4_d:"Complete visual language plus a clickable prototype with usability walkthroughs.",
+    cf5_t:"Launch", cf5_d:"Prototype deployed online, source files handed over with iteration notes.",
+    ca2_badge:"Case 02 · Creative Asset Production", ca2_title:"Company A",
+    ca2_cn:"Local-life ads agency · Custom online asset production",
+    ca2_desc:"Company A is an advertising agency focused on offline local-life service businesses, running traffic campaigns and online optimization for its clients across RED (Xiaohongshu), Douyin, Baidu and Amap. Gexon produces customized online assets for them — a five-step loop from requirement analysis and channel mix to creative design, asset generation and client delivery.",
+    ca2_g1:"Clients", ca2_g2:"Channels",
+    ca2_c1:"Regional renovation firms", ca2_c2:"Chain restaurants", ca2_c3:"Local retailers",
+    ca2f_t:"Asset Delivery Pipeline",
+    ca2f1_t:"Requirement Analysis", ca2f1_d:"Break down client goals, audience profiles and campaign KPIs.",
+    ca2f2_t:"Channel Mix", ca2f2_d:"Combine RED / Douyin / Baidu / Amap by channel characteristics.",
+    ca2f3_t:"Creative Design", ca2f3_d:"Define visual direction, content angles and hooks.",
+    ca2f4_t:"Asset Generation", ca2f4_d:"Batch-produce images, videos and copy in all required sizes.",
+    ca2f5_t:"Client Delivery", ca2f5_d:"Package per channel specs; iterate with campaign feedback.",
+    ca2ex_t:"Example Project · Regional Renovation Firm",
+    ca2ex_d:"For a regional renovation company, Gexon delivered four asset types powering continuous RED-first campaigns:",
+    tab1_t:"FindMe App · Product Prototype", tab2_t:"Company A · Online Assets",
+    ca2g1_t:"Renovation render · Before", ca2g2_t:"Renovation render · After", ca2g3_t:"Case video · Douyin / RED", ca2g4_t:"Kitchen render · Before", ca2g5_t:"Kitchen render · After",
+    ca2e1_t:"Renovation Case Photo Sets", ca2e1_d:"Real project photography and image cards with before / after comparisons; covers optimized for RED feed CTR.", ca2e1_tg:"RED · Image",
+    ca2e2_t:"Renovation Case Videos", ca2e2_d:"15–30s vertical shorts cut from site footage and before / after reveals, with beat-synced captions for RED and Douyin.", ca2e2_tg:"RED / Douyin · Video",
+    ca2e3_t:"Introduction Copy", ca2e3_d:"Company intro, service advantages and testimonials, expanded into variants for A/B testing.", ca2e3_tg:"All channels · Copy",
+    ca2e4_t:"Publishing Plan", ca2e4_d:"Weekly content calendar and topic bank across showcase, process and knowledge lines to keep accounts active.", ca2e4_tg:"RED · Operations",
+    cw_pr_t:"Design Principles", cw_pr_d:"Four principles that shaped every screen decision.",
+    cp1_t:"Content first", cp1_d:"Imagery leads the feed; containers stay quiet and let content speak.",
+    cp2_t:"Thumb reachable", cp2_d:"Core actions sit in the lower thumb zone, key entries within one screen.",
+    cp3_t:"Familiar navigation", cp3_d:"Four bottom tabs aligned with mainstream messenger habits, unread dots precisely placed.",
+    cp4_t:"Map as an entry", cp4_d:"Local life switches between map and list — what you see is where you go.",
+    cw_map_t:"UX Map", cw_map_d:"The full information architecture from entry layer to navigation to core scenarios.",
+    cw_screens_t:"Hi-fi Screen Mockups", cw_screens_d:"Six key pages rebuilt as mockups — navigation, hierarchy and visual language in practice.",
+    proc_label:"Process", proc_title:"A clear and transparent collaboration process",
+    p1_t:"Discovery", p1_d:"Understand business goals and audiences; define scope and success metrics.",
+    p2_t:"Design & Prototype", p2_d:"Deliver design directions, prototypes and sample assets to align fast.",
+    p3_t:"Iterate & Deliver", p3_d:"Refine through feedback rounds; ship final products and source files by milestone.",
+    p4_t:"Grow", p4_d:"Launch campaigns, collect data and keep optimizing for real returns.",
+    cta_title:'Your next product<br>starts <span class="accent">here</span>.',
+    cta_sub:"Tell us your business goals — Gexon will craft the design and growth plan for the AI era.",
+    cta_btn:"Contact Us",
+    cta_note:"* Replace this link once the business email is configured"
+  }
+};
+const btn = document.getElementById('langBtn');
+let lang = 'zh';
+btn.addEventListener('click', () => {
+  lang = lang === 'zh' ? 'en' : 'zh';
+  btn.textContent = lang === 'zh' ? 'EN' : '中';
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (lang === 'en' && I18N.en[k]) el.innerHTML = I18N.en[k];
+    else if (el.dataset.zh !== undefined) el.innerHTML = el.dataset.zh;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.dataset.i18nHtml;
+    if (lang === 'en' && I18N.en[k]) el.innerHTML = I18N.en[k];
+    else if (el.dataset.zh !== undefined) el.innerHTML = el.dataset.zh;
+  });
+});
+/* capture original zh content */
+document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => el.dataset.zh = el.innerHTML);
+
+/* keep mailto subject in sync with language */
+const ctaBtn = document.getElementById('ctaBtn');
+function syncMailto(){
+  const subject = lang === 'zh'
+    ? '商務合作諮詢 - Gexon'
+    : 'Business Inquiry - Gexon';
+  ctaBtn.href = 'mailto:gexon.tech@outlook.com?subject=' + encodeURIComponent(subject);
+}
+syncMailto();
+btn.addEventListener('click', syncMailto);
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- case tabs ---------- */
+const ctabs = document.querySelectorAll('.ctab');
+ctabs.forEach(t => t.addEventListener('click', () => {
+  ctabs.forEach(x => {
+    const on = x === t;
+    x.classList.toggle('on', on);
+    x.setAttribute('aria-selected', on);
+  });
+  document.querySelectorAll('.case-pane').forEach(p => p.hidden = p.id !== t.dataset.pane);
+  document.querySelectorAll('#' + t.dataset.pane + ' .reveal').forEach(el => el.classList.add('in'));
+}));
+</script>
+</body>
+</html>
