@@ -591,29 +591,33 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
 .ars-shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
 .ars-shot figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .ars-shot .mono{font-family:var(--font-mono);font-size:10.5px;color:var(--accent);letter-spacing:.12em;white-space:nowrap}
-.ars-demo{display:grid;grid-template-columns:300px 1fr;border:1px solid var(--line-strong);border-radius:12px;background:var(--panel);overflow:hidden}
-.ars-poster{position:relative;aspect-ratio:9/16;background:#000}
+.ars-demo{border:1px solid var(--line-strong);border-radius:12px;background:var(--panel);overflow:hidden}
+.ars-poster{position:relative;aspect-ratio:16/9;background:#000}
 .ars-video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
-.ars-vtag{position:absolute;top:10px;left:10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--accent);background:rgba(11,15,23,.7);border:1px solid var(--line-strong);border-radius:4px;padding:3px 7px;pointer-events:none}
+.ars-vtag{position:absolute;top:12px;left:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--accent);background:rgba(11,15,23,.7);border:1px solid var(--line-strong);border-radius:4px;padding:3px 7px;pointer-events:none}
 .ars-playbtn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(11,15,23,.72);border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 0 8px rgba(53,224,200,.12);transition:transform .2s,background .2s,opacity .25s}
 .ars-playbtn:hover{transform:translate(-50%,-50%) scale(1.07);background:rgba(11,15,23,.88)}
 .ars-poster.playing .ars-playbtn{opacity:0;pointer-events:none}
 .ars-vfallback{display:none;position:absolute;left:12px;right:12px;bottom:12px;padding:8px 10px;border-radius:6px;background:rgba(11,15,23,.88);color:var(--accent);font-size:12px;text-align:center}
 .ars-poster.video-error .ars-vfallback{display:block}
 .ars-poster.video-error .ars-playbtn{display:none}
-.ars-script{padding:26px 30px;display:flex;flex-direction:column;justify-content:center}
-.ars-script .t{font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:.16em;margin-bottom:14px}
-.ars-beat{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:10px 0;border-bottom:1px dashed var(--line);align-items:baseline}
-.ars-beat:last-child{border-bottom:0}
-.ars-beat .tc{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
-.ars-beat p{font-size:13.5px;line-height:1.7;color:var(--text)}
+.ars-script{border-top:1px solid var(--line-strong);padding:20px 26px 24px;display:grid;grid-template-columns:repeat(5,1fr);gap:0 24px}
+.ars-script .t{grid-column:1/-1;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:.16em;margin-bottom:6px}
+.ars-beat{padding:14px 0 0;border-top:1px dashed var(--line)}
+.ars-beat .tc{display:block;font-family:var(--font-mono);font-size:11.5px;color:var(--accent)}
+.ars-beat p{margin-top:7px;font-size:13px;line-height:1.7;color:var(--text)}
 .ars-beat p b{color:var(--accent);font-weight:500}
 @media(max-width:980px){
-  .ars-lead,.ars-shots,.ars-demo{grid-template-columns:1fr}
+  .ars-lead,.ars-shots{grid-template-columns:1fr}
   .ars-steps{grid-template-columns:1fr 1fr}
-  .ars-poster{max-width:320px;margin:0 auto;width:100%}
+  .ars-script{grid-template-columns:1fr 1fr;gap:0 20px}
+  .ars-beat:nth-child(4){border-top:0;padding-top:14px}
 }
-@media(max-width:640px){.ars-steps{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .ars-steps{grid-template-columns:1fr}
+  .ars-script{grid-template-columns:1fr}
+  .ars-beat:nth-child(4){border-top:1px dashed var(--line)}
+}
 </style>
 </head>
 <body>
@@ -1215,11 +1219,11 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
 
       <div class="ars-lead reveal">
         <p data-i18n-html="ars_lead">
-          你不會剪輯、沒有設備，也請不起內容團隊——但你有一個值得被看見的故事。<strong>AI Reel Studio</strong>（HIKAYA）把「拍一支短劇」壓縮成一次輸入：寫下一句話，Agent 自動完成<strong>劇本、分鏡、關鍵幀、環境音與配樂</strong>，再按鏡頭邊界縫合成片——9:16 竖版、無水印、元數據內嵌 AI 生成標識，一鍵發佈到 TikTok / Instagram Reels / YouTube Shorts。<strong>從想法到成片，一杯咖啡的時間。</strong>
+          你不會剪輯、沒有設備，也請不起內容團隊——但你有一個值得被看見的故事。<strong>AI Reel Studio</strong>（HIKAYA）把「拍一支短劇」壓縮成一次輸入：寫下一句話，Agent 自動完成<strong>劇本、分鏡、關鍵幀、環境音與配樂</strong>，再按鏡頭邊界縫合成片——16:9 橫屏或 9:16 竖版、無水印、元數據內嵌 AI 生成標識，一鍵發佈到 TikTok / Instagram Reels / YouTube Shorts。<strong>從想法到成片，一杯咖啡的時間。</strong>
         </p>
         <div class="ars-cta">
           <span class="tag">LIVE PROTOTYPE · V0.4</span>
-          <p data-i18n="ars_cta_note">真實案例 Spice Road：畫面與聲音均為真實渲染產物，6 個鏡頭一次通過審核。</p>
+          <p data-i18n="ars_cta_note">樣片畫面與聲音均為真實渲染產物，各鏡頭一次通過審核。</p>
           <a class="btn btn-primary" href="https://popcall-git.github.io/ai_drama/#studio" target="_blank" rel="noopener" data-i18n="ars_cta">免費體驗 AI Reel Studio ↗</a>
         </div>
       </div>
@@ -1257,24 +1261,24 @@ footer{border-top:1px solid var(--line);padding:44px 0;position:relative;z-index
         <div class="ars-poster">
           <video class="ars-video" controls playsinline preload="metadata"
                  poster="assets/img/ai-reel-demo-poster.jpg"
-                 aria-label="AI Reel Studio 演示视频：Spice Road 第一集成片">
+                 aria-label="AI Reel Studio 演示视频：中環實景短劇樣片">
             <source src="assets/video/ai-reel-demo.mp4" type="video/mp4">
             <source src="assets/video/ai-reel-demo.webm" type="video/webm">
             你的浏览器不支持内嵌视频。
           </video>
-          <span class="ars-vtag">DEMO · 0:30 · 9:16</span>
+          <span class="ars-vtag">DEMO · 0:20 · 16:9</span>
           <button class="ars-playbtn" type="button" aria-label="播放演示视频">
             <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L19 12 L8 19 Z" fill="#35E0C8"/></svg>
           </button>
           <a class="ars-vfallback" href="assets/video/ai-reel-demo.mp4" target="_blank" rel="noopener">瀏覽器無法內嵌播放，點此開啟視頻 ↗</a>
         </div>
         <div class="ars-script">
-          <div class="t" data-i18n="ars_demo_t">60S DEMO SCRIPT · 旁白 + 屏上字幕</div>
-          <div class="ars-beat"><span class="tc">0:00</span><p data-i18n-html="ars_b1">黑屏起字——<b>「拍一支短劇，只需要一句話？」</b></p></div>
-          <div class="ars-beat"><span class="tc">0:05</span><p data-i18n-html="ars_b2">錄屏：輸入框鍵入一句話，光標閃動——旁白：<b>「寫下你的故事，就這麼簡單。」</b></p></div>
-          <div class="ars-beat"><span class="tc">0:15</span><p data-i18n-html="ars_b3">分鏡逐格亮起，Approved 標籤一個個彈出——旁白：<b>「劇本、分鏡、關鍵幀、配樂，Agent 一次完成。」</b></p></div>
-          <div class="ars-beat"><span class="tc">0:30</span><p data-i18n-html="ars_b4">成片播放 Spice Road 精華 15 秒——旁白：<b>「按鏡頭邊界縫合，台詞永不切半。」</b></p></div>
-          <div class="ars-beat"><span class="tc">0:45</span><p data-i18n-html="ars_b5">Export &amp; publish，TikTok / Reels / Shorts 圖標依次亮起，定格 Logo——旁白：<b>「從想法到上線，60 秒。AI Reel Studio。」</b></p></div>
+          <div class="t" data-i18n="ars_demo_t">20S SAMPLE FILM · 旁白 + 屏上字幕</div>
+          <div class="ars-beat"><span class="tc">0:00</span><p data-i18n-html="ars_b1">綠燈亮起，主角隨人潮穿過中環街口——旁白：<b>「一句話，開拍一支實景短劇。」</b></p></div>
+          <div class="ars-beat"><span class="tc">0:04</span><p data-i18n-html="ars_b2">特寫：站台候車，主角回望鏡頭——旁白：<b>「角色、運鏡與光線，Agent 一次編排。」</b></p></div>
+          <div class="ars-beat"><span class="tc">0:08</span><p data-i18n-html="ars_b3">登上電車，車門緩緩關閉——旁白：<b>「分鏡與配樂自動生成，Faith-friendly 守住內容邊界。」</b></p></div>
+          <div class="ars-beat"><span class="tc">0:12</span><p data-i18n-html="ars_b4">車窗外街景流動，玻璃反光掠過——旁白：<b>「逐鏡渲染，實景級畫質。」</b></p></div>
+          <div class="ars-beat"><span class="tc">0:16</span><p data-i18n-html="ars_b5">大樓立面滑過，鏡頭定格在城市——旁白：<b>「從想法到成片，20 秒。AI Reel Studio。」</b></p></div>
         </div>
       </div>
     </div>
@@ -1418,8 +1422,8 @@ const I18N = {
     cta_note:"* Replace this link once the business email is configured",
     ars_label:"Product · AI Reel Studio",
     ars_title:"One line in, a short drama out",
-    ars_lead:'You can\'t edit video, you don\'t own gear, and a content team is out of budget — but you have a story worth telling. <strong>AI Reel Studio</strong> (HIKAYA) compresses "shooting a short drama" into a single input: write one line, and the agent delivers <strong>script, storyboard, keyframes, ambience and score</strong> automatically, then stitches everything at shot boundaries — 9:16 vertical, watermark-free, AI-generated label embedded in metadata, publishable to TikTok / Instagram Reels / YouTube Shorts in one click. <strong>From idea to finished film in the time it takes to finish a coffee.</strong>',
-    ars_cta_note:"Real case Spice Road: footage and sound are actual renders — 6 shots approved on the first take.",
+    ars_lead:'You can\'t edit video, you don\'t own gear, and a content team is out of budget — but you have a story worth telling. <strong>AI Reel Studio</strong> (HIKAYA) compresses "shooting a short drama" into a single input: write one line, and the agent delivers <strong>script, storyboard, keyframes, ambience and score</strong> automatically, then stitches everything at shot boundaries — 16:9 landscape or 9:16 vertical, watermark-free, AI-generated label embedded in metadata, publishable to TikTok / Instagram Reels / YouTube Shorts in one click. <strong>From idea to finished film in the time it takes to finish a coffee.</strong>',
+    ars_cta_note:"Footage and sound are actual renders — every shot approved on the first take.",
     ars_cta:"Try AI Reel Studio Free ↗",
     ars_s1_t:"Write one line",
     ars_s1_d:"\"Before the sky goes dark, the lanterns in an old alley light up one by one.\" You just tell the story — the agent handles the rest.",
@@ -1429,12 +1433,12 @@ const I18N = {
     ars_s3_d:"Parts are split at shot boundaries (each ≤30s, no line ever cut in half), delivered with shot-by-shot clips and a 2K keyframe pack.",
     ars_g1:"Studio workbench · one-line input to storyboard",
     ars_g2:"Delivery page · preview and one-click publish",
-    ars_demo_t:"60S DEMO SCRIPT · VO + ON-SCREEN TEXT",
-    ars_b1:'Black screen, title card — <b>"Shooting a short drama takes just one sentence?"</b>',
-    ars_b2:'Screen recording: a line is typed into the input, cursor blinking — VO: <b>"Write your story. That\'s all it takes."</b>',
-    ars_b3:'Storyboard tiles light up one by one, Approved badges pop in — VO: <b>"Script, storyboard, keyframes, score — the agent does it in one pass."</b>',
-    ars_b4:'The finished film plays a 15s cut of Spice Road — VO: <b>"Stitched at shot boundaries — no line ever cut in half."</b>',
-    ars_b5:'Export &amp; publish — TikTok / Reels / Shorts icons light up, logo holds — VO: <b>"Idea to launch in 60 seconds. AI Reel Studio."</b>'
+    ars_demo_t:"20S SAMPLE FILM · VO + ON-SCREEN TEXT",
+    ars_b1:'The light turns green — the lead crosses a Central street with the crowd — VO: <b>"One line in, a live-action short begins."</b>',
+    ars_b2:'Close-up: waiting at the stop, he glances back at the camera — VO: <b>"Character, camera, lighting — composed by the agent in one pass."</b>',
+    ars_b3:'He boards the tram, doors sliding shut — VO: <b>"Storyboard and score generated automatically; Faith-friendly mode keeps it respectful."</b>',
+    ars_b4:'City streets flow past the window, glass reflections sweeping by — VO: <b>"Shot-by-shot rendering, live-action grade."</b>',
+    ars_b5:'A tower facade glides past, the frame holds on the city — VO: <b>"Idea to film in 20 seconds. AI Reel Studio."</b>'
   }
 };
 const btn = document.getElementById('langBtn');
